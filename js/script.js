@@ -26,7 +26,12 @@ divs.forEach((div) => {
     parent = this.parentElement;
     parent.classList.toggle("col-expand");
 
-    this.classList.remove("shrink");
+    sibling = this.nextSibling;
+    sibleDiv = sibling.nextSibling
+    if(sibleDiv && sibleDiv.tagName === 'DIV'){
+        sibleDiv.classList.toggle("shrink");
+    }
+
     this.classList.toggle("panel-expand");
 
     }
